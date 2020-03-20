@@ -26,7 +26,7 @@ public class SwaggerConfiguration {
     @Bean
     public Docket swaggerAPI(){
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(swaggerApiInfo()).select()
-                .apis(RequestHandlerSelectors.basePackage("com.hsnam.sample.restapi"))
+                .apis(RequestHandlerSelectors.basePackage("com.hsnam.sample.restapi.web"))
                 .paths(PathSelectors.any())
                 .build()
                 .useDefaultResponseMessages(false);
@@ -39,7 +39,7 @@ public class SwaggerConfiguration {
     private ApiInfo swaggerApiInfo(){
         return new ApiInfoBuilder().title("REST API Sample")
                 .description("REST API SAMPLE")
-                .license("UST21").version("1").build();
+                .license("hsnam").version("1").build();
     }//end of swaggerApiInfo
 
     /**
